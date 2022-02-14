@@ -42,7 +42,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return $id;
+        return User::find($id);
     }
 
     /**
@@ -68,6 +68,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        return 'delete';
+        return User::destroy($id);
     }
 }
