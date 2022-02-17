@@ -85,4 +85,10 @@ class OrdersController extends Controller
     {
         //
     }
+
+    public function creaOrdine($totale, $data){
+        $data['prezzo']=$totale;
+        $data['costo_spedizione']='4.90';
+        (new Order($data))->save();
+    }
 }

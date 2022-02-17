@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -58,5 +59,25 @@ class UserController extends Controller
             })
             ->get();
         return $result;
+    }
+
+    private function scalaSaldo($utente, $costo){
+        $utente['saldo']-=$costo;
+        $utente->save();
+    }
+
+    public function makeOrder(Request $request){
+        $data=$request->input();
+        $utente=User::find($data['user_id']);
+        $prodotto=Product::find($data['product_id']);
+        $quantita=$data['quantita'];
+        $costo=$quantita*$prodotto['prezzo'];
+        if($prodotto['quantita'] >= $quantita && $utente['saldo'] >= $costo){
+            (new OrdersController())->creaOrdine($costo, $data);
+            $this->scalaSaldo($utente, $costo);
+            (new ProductsController())->scalaQuantita($prodotto, $quantita);
+        }else{
+            return "errore";
+        }
     }
 }

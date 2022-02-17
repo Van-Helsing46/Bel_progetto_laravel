@@ -41,4 +41,9 @@ class ProductsController extends Controller
     public function getAllBuyers($id) {
         $result = Product::where('product_id', $id)->with('orders.users')->get();
     }
+
+    public function scalaQuantita($prodotto, $quantita){
+        $prodotto['quantita']-=$quantita;
+        $prodotto->save();
+    }
 }
