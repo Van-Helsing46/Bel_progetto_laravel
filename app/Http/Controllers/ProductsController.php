@@ -46,4 +46,9 @@ class ProductsController extends Controller
         $prodotto['quantita']-=$quantita;
         $prodotto->save();
     }
+
+    public function aggiungiQuantita($prodotto, $quantita){
+        $prodotto['quantita']+=$quantita;
+        $prodotto->save();
+    }
 }

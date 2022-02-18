@@ -23,6 +23,7 @@ Route::prefix('users')->group(function () {
     Route::get('getProductsDetails/{id}', [UserController::class, 'getProductsDetails']);
     Route::get('checkIfBuyedProduct/{userId}/{productId}', [UserController::class, 'checkIfBuyedProduct']);
     Route::post('makeOrder/', [UserController::class, 'makeOrder']);
+    Route::post('deleteOrder/', [UserController::class, 'deleteOrder']);
 });
 
 Route::post('findOrderByProduct/', [OrdersController::class, 'findOrderByProduct']);

@@ -122,5 +122,12 @@ class OrdersController extends Controller
             return "ERRORE".$e->getFile().$e->getMessage().$e->getLine();
         }
     }
-    
+
+    public function deleteOrder ($id) {
+        try {
+            $ordine = Order::destroy($id);
+        } catch (\Exception $e) {
+            return "ERRORE".$e->getFile().$e->getMessage().$e->getLine();
+        }
+    }
 }
