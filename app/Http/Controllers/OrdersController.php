@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrdersController extends Controller
@@ -90,5 +91,21 @@ class OrdersController extends Controller
         $data['prezzo']=$totale;
         $data['costo_spedizione']='4.90';
         (new Order($data))->save();
+    }
+
+    public function showOrder(Request $request){
+        $data=$request->input();
+        $ordine=Order::find($data['id']);
+        return $ordine;
+    }
+
+    public function showUserOrders (Request $request) {
+        try {
+            $data = $request->input();
+            $risultato = User::with('orders')->find($data['user_id']);
+            return $risultato;
+        } catch (\Exception $e){
+            return "ciccio con la palla".$e->getFile().$e->getMessage().$e->getLine();
+        }
     }
 }

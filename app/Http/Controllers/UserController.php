@@ -80,4 +80,21 @@ class UserController extends Controller
             return "errore";
         }
     }
+
+
+    public function deleteOrder(Request $request)
+    {
+        $data = $request->input();
+        $utente = User::find($data['user_id']);
+        $prodotto = Product::find($data['product_id']);
+        $quantita = $data['quantita'];
+        $costo = $quantita * $prodotto['prezzo'];
+        if ($prodotto['quantita'] >= $quantita && $utente['saldo'] >= $costo) {
+            (new OrdersController())->creaOrdine($costo, $data);
+            $this->scalaSaldo($utente, $costo);
+            (new ProductsController())->scalaQuantita($prodotto, $quantita);
+        } else {
+            return "errore";
+        }
+    }
 }

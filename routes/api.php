@@ -25,5 +25,7 @@ Route::prefix('users')->group(function () {
     Route::post('makeOrder/', [UserController::class, 'makeOrder']);
 });
 
+Route::post('showUserOrders/', [OrdersController::class, 'showUserOrders']);
+Route::post('showOrder/', [OrdersController::class, 'showOrder']);
 Route::resource('products', ProductsController::class);
 Route::resource('orders', OrdersController::class);
