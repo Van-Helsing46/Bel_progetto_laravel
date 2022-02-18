@@ -108,4 +108,19 @@ class OrdersController extends Controller
             return "ciccio con la palla".$e->getFile().$e->getMessage().$e->getLine();
         }
     }
+
+    public function findOrderByProduct (Request $request) { //questa funzione non funziona bene e Simone ha fallito
+        try {
+            $data = $request->input();
+            $risultato = User::with('orders')
+                ->whereHas('orders', function($query) use($data) {
+                    $query->where('product_id', '=', intval($data['product_id']))
+                    ->where('user_id', $data['user_id']);
+                })->get();
+            return $risultato;
+        } catch (\Exception $e){
+            return "ERRORE".$e->getFile().$e->getMessage().$e->getLine();
+        }
+    }
+    
 }
