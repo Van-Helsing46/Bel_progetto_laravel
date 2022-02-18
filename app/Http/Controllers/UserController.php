@@ -101,6 +101,4 @@ class UserController extends Controller
             return "ERRORE".$e->getFile().$e->getMessage().$e->getLine();
         }
     }
-
-    //questo commento è in realtà una funzione
 }
