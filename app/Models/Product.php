@@ -17,4 +17,9 @@ class Product extends Model
     public function orders() {
         return $this->belongsTo('App\Models\Order', 'id', 'product_id');
     }
+
+    public function sellers() {
+        return $this->belongsTo('App\Models\Seller', 'id', 'seller_id');
+    }
+
 }

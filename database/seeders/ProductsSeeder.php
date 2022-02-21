@@ -22,11 +22,13 @@ class ProductsSeeder extends Seeder
                 'titolo' => 'Lettiera per gatti',
                 'descrizione' => 'Lettiera assorbente per gatto irriverente',
                 'prezzo' => 20.50,
+                'seller_id'=>1,
                 'quantita' => 3
             ],[
                 'titolo' => 'Macchina per PopCorn',
                 'descrizione' => 'Bella macchina funzionale',
                 'prezzo' => 49.99,
+                'seller_id'=>2,
                 'quantita' => 20,
             ]
         ]);

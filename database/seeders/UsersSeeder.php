@@ -22,12 +22,14 @@ class UsersSeeder extends Seeder
                 'name' => 'Ciccio',
                 'email' => 'ciccio@pasticcio.com',
                 'telefono' => '3182389012',
+                'saldo' => 5000,
                 'password' => 'prova',
                 'eta' => 43
             ],[
                 'name' => 'Mario',
                 'email' => 'mario@rossi.com',
                 'telefono' => '31823890212',
+                'saldo' => 5000,
                 'password' => 'provda',
                 'eta' => 45
             ]
