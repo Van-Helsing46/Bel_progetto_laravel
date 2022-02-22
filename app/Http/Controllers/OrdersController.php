@@ -68,14 +68,16 @@ class OrdersController extends Controller
         }
     }
 
-    public function findOrderByProduct (Request $request) { //questa funzione non funziona bene e Simone ha fallito
+    public function findOrderByProduct (Request $request) { //questa funzione non funziona bene e Simone e Michele hanno fallito
         try {
             $data = $request->input();
-            $risultato = User::with('orders')
-                ->whereHas('orders', function($query) use($data) {
-                    $query->where('product_id', '=', intval($data['product_id']))
+            $risultato = User::with(['orders'=> function($query) use($data) {
+                     $query->where('product_id', $data['product_id'])
                     ->where('user_id', $data['user_id']);
-                })->get();
+                }])->find($data['user_id']);
+//            $risultato = Order::where('product_id', $data['product_id'])
+//                ->where('user_id', $data['user_id'])  //questa funzione funziona, ma non come vogliamo
+//                ->with('users')->get();               //credit by Michele
             return $risultato;
         } catch (\Exception $e){
             return "ERRORE".$e->getFile().$e->getMessage().$e->getLine();

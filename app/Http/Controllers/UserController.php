@@ -101,4 +101,15 @@ class UserController extends Controller
             return "ERRORE".$e->getFile().$e->getMessage().$e->getLine();
         }
     }
+
+    public function fallimenti () {
+        return ("Si narra che tutti coloro che hanno provato a fare la funzione
+        'findOrderByProduct' sono periti. I nomi dei pavidi cavalieri periti in battaglia sono:
+        Rory Cannata, Ettore Casamento, Michele Lo Giudice, Andrea Aviusocognomu, Vincenzo Avinautrucognomiancora
+         e Simone Battiato, il quale però con un ultimo sforzo è riuscito a sconfiggere il temibile Laravel.");
+    }
+
+    public function vincitori () {
+        return ("WALL OF FAME: Simone Battiato");
+    }
 }
