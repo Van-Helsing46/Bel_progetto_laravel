@@ -28,4 +28,8 @@ class User extends Authenticatable
     public function orders() {
         return $this->hasMany('App\Models\Order', 'user_id', 'id');
     }
+
+    public function messages() {
+        return $this->hasMany('App\Models\Message', 'seller_id', 'id');
+    }
 }

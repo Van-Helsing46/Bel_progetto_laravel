@@ -17,4 +17,7 @@ class Seller extends Model
     public function products() {
         return $this->hasMany('App\Models\Product', 'seller_id', 'id');
     }
+    public function messages() {
+        return $this->hasMany('App\Models\Message', 'seller_id', 'id');
+    }
 }
