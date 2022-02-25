@@ -21,17 +21,21 @@ class UsersSeeder extends Seeder
             [
                 'name' => 'Ciccio',
                 'email' => 'ciccio@pasticcio.com',
-                'telefono' => '3182389012',
-                'saldo' => 5000,
+                'phone_number' => '3182389012',
+                'balance' => 5000,
                 'password' => 'prova',
-                'eta' => 43
+                'age' => 43,
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
             ],[
                 'name' => 'Mario',
                 'email' => 'mario@rossi.com',
-                'telefono' => '31823890212',
-                'saldo' => 5000,
+                'phone_number' => '31823890212',
+                'balance' => 5000,
                 'password' => 'provda',
-                'eta' => 45
+                'age' => 45,
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
             ]
         ]);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
@@ -42,16 +46,20 @@ class UsersSeeder extends Seeder
             [
                 'name' => 'Ciccio',
                 'email' => 'ciccio@pasticcio.com',
-                'telefono' => '3182389012',
+                'phone_number' => '3182389012',
                 'password' => 'prova',
-                'eta' => 43
+                'age' => 43,
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
             ],
             [
                 'name' => 'Pippo',
                 'email' => 'pippo@franco.com',
-                'eta' => 81,
+                'age' => 81,
                 'password' => 'prova',
-                'telefono' => '123812389'
+                'phone_number' => '123812389',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
             ]
         ]);*/
     }

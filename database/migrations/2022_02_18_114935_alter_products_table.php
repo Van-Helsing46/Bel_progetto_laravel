@@ -14,7 +14,7 @@ class AlterProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function(Blueprint $table) {
-            $table->unsignedBigInteger('seller_id')->after('quantita');
+            $table->unsignedBigInteger('seller_id')->after('quantity');
             $table->foreign('seller_id')
                 ->references('id')
                 ->on('sellers')

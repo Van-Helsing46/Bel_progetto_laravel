@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,13 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('users')->group(function () {
-    Route::resource('/', UserController::class);
-    Route::get('getProductsDetails/{id}', [UserController::class, 'getProductsDetails']);
-    Route::get('checkIfBuyedProduct/{userId}/{productId}', [UserController::class, 'checkIfBuyedProduct']);
-    Route::post('makeOrder/', [UserController::class, 'makeOrder']);
-    Route::post('deleteOrder/', [UserController::class, 'deleteOrder']);
-    Route::get('fallimenti', [UserController::class, 'fallimenti']);
-    Route::get('vincitori', [UserController::class, 'vincitori']);
+    Route::resource('/', UsersController::class);
+    Route::get('getProductsDetails/{id}', [UsersController::class, 'getProductsDetails']);
+    Route::get('checkIfBuyedProduct/{userId}/{productId}', [UsersController::class, 'checkIfBuyedProduct']);
+    Route::post('makeOrder/', [UsersController::class, 'makeOrder']);
+    Route::post('deleteOrder/', [UsersController::class, 'deleteOrder']);
+    Route::get('fallimenti', [UsersController::class, 'fallimenti']);
+    Route::get('vincitori', [UsersController::class, 'vincitori']);
 });
 
 Route::post('findOrderByProduct/', [OrdersController::class, 'findOrderByProduct']);

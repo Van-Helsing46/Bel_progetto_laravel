@@ -14,7 +14,7 @@ class AlterUsersTable2 extends Migration
     public function up()
     {
         Schema::table('users', function(Blueprint $table) {
-            $table->float('saldo')->after('telefono');
+            $table->float('balance')->after('phone_number');
         });
     }
 
@@ -26,7 +26,7 @@ class AlterUsersTable2 extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-           $table->dropColumn('saldo');
+           $table->dropColumn('balance');
         });
     }
 }

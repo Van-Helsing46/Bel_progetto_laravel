@@ -14,7 +14,7 @@ class AlterSellersTable extends Migration
     public function up()
     {
         Schema::table('sellers', function(Blueprint $table) {
-            $table->float('saldo')->after('PIVA')->default(250);
+            $table->float('balance')->after('VAT_number')->default(250);
         });
     }
 
@@ -26,7 +26,7 @@ class AlterSellersTable extends Migration
     public function down()
     {
         Schema::table('sellers', function (Blueprint $table) {
-            $table->dropColumn('saldo');
+            $table->dropColumn('balance');
         });
     }
 }

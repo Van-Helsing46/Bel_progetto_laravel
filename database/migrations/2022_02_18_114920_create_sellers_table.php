@@ -15,10 +15,10 @@ class CreateSellersTable extends Migration
     {
         Schema::create('sellers', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('nome_negozio');
-            $table->string('indirizzo_negrozzio');
-            $table->integer('PIVA');
+            $table->string('name');
+            $table->string('shop_name');
+            $table->string('niggness_address');
+            $table->integer('VAT_number');
             $table->timestamps();
             $table->softDeletes();
         });

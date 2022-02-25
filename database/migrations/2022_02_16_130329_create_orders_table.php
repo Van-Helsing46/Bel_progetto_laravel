@@ -26,10 +26,10 @@ class CreateOrdersTable extends Migration
                 ->references('id')
                 ->on('products')
                 ->onUpdate('cascade');
-            $table->integer('quantita');
-            $table->float('prezzo');
-            $table->float('costo_spedizione');
-            $table->string('indirizzo');
+            $table->integer('quantity');
+            $table->float('price');
+            $table->float('shipping_price');
+            $table->string('shipping_address');
             $table->timestamps();
             $table->softDeletes();
         });

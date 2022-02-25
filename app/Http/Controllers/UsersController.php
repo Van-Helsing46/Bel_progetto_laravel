@@ -7,7 +7,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     public function index()
     {
@@ -63,7 +63,7 @@ class UserController extends Controller
     }
 
     private function scalaSaldo($utente, $costo){
-        $utente['saldo']-=$costo;
+        $utente['balance']-=$costo;
         $utente->save();
     }
 
@@ -71,9 +71,9 @@ class UserController extends Controller
         $data=$request->input();
         $utente=User::find($data['user_id']);
         $prodotto=Product::find($data['product_id']);
-        $quantita=$data['quantita'];
-        $costo=$quantita*$prodotto['prezzo'];
-        if($prodotto['quantita'] >= $quantita && $utente['saldo'] >= $costo){
+        $quantita=$data['quantity'];
+        $costo=$quantita*$prodotto['price'];
+        if($prodotto['quantity'] >= $quantita && $utente['balance'] >= $costo){
             (new OrdersController())->creaOrdine($costo, $data);
             $this->scalaSaldo($utente, $costo);
             (new ProductsController())->scalaQuantita($prodotto, $quantita);
@@ -83,7 +83,7 @@ class UserController extends Controller
     }
 
     public function aggiungiSaldo($utente, $saldo){
-        $utente['saldo']+=$saldo;
+        $utente['balance']+=$saldo;
         $utente->save();
     }
 
@@ -93,9 +93,9 @@ class UserController extends Controller
             $data = $request->input();
             $ordine = Order::find($data['id']);
             $utente = User::find($ordine['user_id']);
-            $this->aggiungiSaldo($utente,$ordine['prezzo']+$ordine['costo_spedizione']);
+            $this->aggiungiSaldo($utente,$ordine['price']+$ordine['shipping_price']);
             $prodotto = Product::find($ordine['product_id']);
-            (new ProductsController())->aggiungiQuantita($prodotto,$ordine['quantita']);
+            (new ProductsController())->aggiungiQuantita($prodotto,$ordine['quantity']);
             (new OrdersController())->deleteOrder($data['id']);
         } catch (\Exception $e) {
             return "ERRORE".$e->getFile().$e->getMessage().$e->getLine();

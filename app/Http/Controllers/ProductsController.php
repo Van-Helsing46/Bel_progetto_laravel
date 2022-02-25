@@ -43,12 +43,12 @@ class ProductsController extends Controller
     }
 
     public function scalaQuantita($prodotto, $quantita){
-        $prodotto['quantita']-=$quantita;
+        $prodotto['quantity']-=$quantita;
         $prodotto->save();
     }
 
     public function aggiungiQuantita($prodotto, $quantita){
-        $prodotto['quantita']+=$quantita;
+        $prodotto['quantity']+=$quantita;
         $prodotto->save();
     }
 }

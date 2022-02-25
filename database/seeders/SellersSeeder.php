@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
+use App\Models\Seller;
 use Illuminate\Database\Seeder;
 use DB;
 
-class ProductsSeeder extends Seeder
+class SellersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,22 +16,20 @@ class ProductsSeeder extends Seeder
     public function run()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        Product::truncate();
-        Product::insert([
+        Seller::truncate();
+        Seller::insert([
             [
-                'title' => 'Lettiera per gatti',
-                'description' => 'Lettiera assorbente per gatto irriverente',
-                'price' => 20.50,
-                'seller_id'=>1,
-                'quantity' => 3,
+                'name' => 'Joshua Porcella',
+                'shop_name' => 'Porcellane per porcelline',
+                'niggness_address' => 'via del membro eretto 32',
+                'VAT_number' => 5619884,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],[
-                'title' => 'Macchina per PopCorn',
-                'description' => 'Bella macchina funzionale',
-                'price' => 49.99,
-                'seller_id'=>2,
-                'quantity' => 20,
+                'name' => 'Armando',
+                'shop_name' => 'Hai mica un amaca',
+                'niggness_address' => 'via Panama 25',
+                'VAT_number' => 5682914,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ]

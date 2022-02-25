@@ -25,8 +25,8 @@ class CreateMessagesTable extends Migration
                 ->references('id')
                 ->on('sellers')
                 ->onUpdate('cascade');
-            $table->longText('messaggio');
-            $table->boolean('direzione'); //mandato da: 0 = user, 1 = seller
+            $table->longText('message');
+            $table->boolean('direction'); //sent by: 0 = user, 1 = seller
             $table->timestamps();
             $table->softDeletes();
         });

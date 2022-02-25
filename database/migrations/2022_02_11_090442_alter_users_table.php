@@ -14,8 +14,8 @@ class AlterUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function(Blueprint $table) {
-            $table->string('telefono')->after('email')->nullable();
-            $table->tinyInteger('eta')->nullable()->after('telefono');
+            $table->string('phone_number')->after('email')->nullable();
+            $table->tinyInteger('age')->nullable()->after('phone_number');
             $table->string('email')->nullable()->change();
         });
     }
@@ -28,8 +28,8 @@ class AlterUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('telefono');
-            $table->dropColumn('eta');
+            $table->dropColumn('phone_number');
+            $table->dropColumn('age');
             $table->string('email')->change();
         });
     }

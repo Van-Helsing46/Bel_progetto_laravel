@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Seller;
 use Illuminate\Http\Request;
 
-class SellerController extends Controller
+class SellersController extends Controller
 {
 
     public function index()

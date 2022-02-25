@@ -21,57 +21,57 @@ class MessagesSeeder extends Seeder
             [
                 'user_id' => 1,
                 'seller_id' => 1,
-                'messaggio' => 'Grazie per avermi venduto le bocce, ora posso vedere le tue?',
-                'direzione' => 0,
+                'message' => 'Grazie per avermi venduto le bocce, ora posso vedere le tue?',
+                'direction' => 0,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],[
                 'user_id' => 1,
                 'seller_id' => 1,
-                'messaggio' => 'No',
-                'direzione' => 1,
+                'message' => 'No',
+                'direction' => 1,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],[
                 'user_id' => 1,
                 'seller_id' => 1,
-                'messaggio' => 'Come mai? Sarebbe proprio bello vedere le tue',
-                'direzione' => 0,
+                'message' => 'Come mai? Sarebbe proprio bello vedere le tue',
+                'direction' => 0,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],[
                 'user_id' => 1,
                 'seller_id' => 1,
-                'messaggio' => 'Sei stato segnalato al sistema, il tuo account verrà cancellato',
-                'direzione' => 1,
+                'message' => 'Sei stato segnalato al sistema, il tuo account verrà cancellato',
+                'direction' => 1,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],[
                 'user_id' => 2,
                 'seller_id' => 2,
-                'messaggio' => 'Grazie per avermi venduto la poltrona, molto bella',
-                'direzione' => 0,
+                'message' => 'Grazie per avermi venduto la poltrona, molto bella',
+                'direction' => 0,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],[
                 'user_id' => 2,
                 'seller_id' => 2,
-                'messaggio' => 'Prego, spero comprerai altro',
-                'direzione' => 1,
+                'message' => 'Prego, spero comprerai altro',
+                'direction' => 1,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],[
                 'user_id' => 2,
                 'seller_id' => 2,
-                'messaggio' => 'No, arrivederci',
-                'direzione' => 0,
+                'message' => 'No, arrivederci',
+                'direction' => 0,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],[
                 'user_id' => 2,
                 'seller_id' => 2,
-                'messaggio' => ':\'(',
-                'direzione' => 1,
+                'message' => ':\'(',
+                'direction' => 1,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ]
