@@ -49,7 +49,6 @@ class OrdersController extends Controller
     public function creaOrdine($totale, $data){
         $data['price']=$totale;
         $data['shipping_price']='4.90';
-        print_r($data);
         (new Order($data))->save();
     }
 

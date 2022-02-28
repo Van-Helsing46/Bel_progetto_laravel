@@ -3,6 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use JWTAuth;
+use Exception;
+use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 use Illuminate\Http\Request;
 
 class TestMiddleware
@@ -16,12 +19,10 @@ class TestMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $data=$request->input();
-        if($data['auth'] == 1) {
-            unset($request['auth']);
+        //$data=$request->header('Authorization');
+        if (JWTAuth::parseToken()->authenticate())
             return $next($request);
-        }
         else
-            abort(403) ;
+            abort(403);
     }
 }
