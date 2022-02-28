@@ -22,10 +22,10 @@ Route::prefix('users')->group(function () {
     Route::resource('/', UsersController::class);
     Route::get('getProductsDetails/{id}', [UsersController::class, 'getProductsDetails']);
     Route::get('checkIfBuyedProduct/{userId}/{productId}', [UsersController::class, 'checkIfBuyedProduct']);
-    Route::post('makeOrder/', [UsersController::class, 'makeOrder']);
     Route::post('deleteOrder/', [UsersController::class, 'deleteOrder']);
-    Route::get('fallimenti', [UsersController::class, 'fallimenti']);
-    Route::get('vincitori', [UsersController::class, 'vincitori']);
+    Route::get('fallimenti/', [UsersController::class, 'fallimenti']);
+    Route::get('vincitori/', [UsersController::class, 'vincitori']);
+    Route::post('makeOrder', [UsersController::class, 'makeOrder'])->middleware('test');
 });
 
 Route::post('findOrderByProduct/', [OrdersController::class, 'findOrderByProduct']);
@@ -33,3 +33,4 @@ Route::post('showUserOrders/', [OrdersController::class, 'showUserOrders']);
 Route::post('showOrder/', [OrdersController::class, 'showOrder']);
 Route::resource('products', ProductsController::class);
 Route::resource('orders', OrdersController::class);
+
